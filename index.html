@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greg Life Stylz Technology Ltd | Electrician in Kingston, Jamaica</title>
+<meta name="description" content="Greg Life Stylz Technology Ltd - Professional electrical services, CCTV camera installation, network cabling, and solar backup systems in Kingston, Jamaica.">
+<style>
+  :root {
+    --navy: #0a1836;
+    --navy-light: #132a54;
+    --accent: #f2b705;
+    --accent-dark: #d69e00;
+    --text-light: #f5f7fa;
+    --text-muted: #b9c2d4;
+    --card-bg: #101f42;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--navy);
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1150px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,24,54,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(242,183,5,0.2);
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; max-width: 1150px; margin: 0 auto;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1rem; white-space: nowrap; }
+  .logo .dot { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; font-size: 0.95rem; }
+  .nav-links a { transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: var(--navy); padding: 9px 18px;
+    border-radius: 6px; font-weight: 600; font-size: 0.9rem;
+  }
+  .menu-toggle { display: none; background: none; border: none; color: var(--text-light); font-size: 1.6rem; cursor: pointer; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 90px 0 100px;
+    background:
+      linear-gradient(160deg, rgba(10,24,54,0.88), rgba(10,24,54,0.72)),
+      url('images/Image5.png') center 30%/cover no-repeat;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.6rem; margin-bottom: 14px; }
+  .hero .accent { color: var(--accent); }
+  .hero p { color: var(--text-muted); max-width: 620px; margin: 0 auto 30px; font-size: 1.1rem; }
+  .badge-row {
+    display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+    margin-bottom: 34px; color: var(--text-muted); font-size: 0.95rem;
+  }
+  .badge-row span strong { color: var(--accent); }
+  .btn-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    padding: 13px 28px; border-radius: 8px; font-weight: 600; font-size: 1rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: inline-block;
+  }
+  .btn-primary { background: var(--accent); color: var(--navy); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(242,183,5,0.3); }
+  .btn-outline { border: 2px solid var(--accent); color: var(--accent); }
+  .btn-outline:hover { background: rgba(242,183,5,0.1); transform: translateY(-2px); }
+
+  /* Section headings */
+  section { padding: 80px 0; }
+  .section-head { text-align: center; margin-bottom: 50px; }
+  .eyebrow {
+    color: var(--accent); text-transform: uppercase; letter-spacing: 2px;
+    font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; display: block;
+  }
+  .section-head h2 { font-size: 2rem; }
+  .section-head p { color: var(--text-muted); max-width: 550px; margin: 12px auto 0; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .about-img { border-radius: 12px; overflow: hidden; border: 1px solid rgba(242,183,5,0.25); }
+  .about-text p { color: var(--text-muted); margin-bottom: 16px; }
+  .stat-row { display: flex; gap: 30px; margin-top: 26px; }
+  .stat-row div { text-align: left; }
+  .stat-row strong { font-size: 1.8rem; color: var(--accent); display: block; }
+  .stat-row span { color: var(--text-muted); font-size: 0.85rem; }
+
+  /* Services */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .service-card {
+    background: var(--card-bg); border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .service-card:hover { transform: translateY(-6px); border-color: rgba(242,183,5,0.4); }
+  .service-card img { height: 190px; width: 100%; object-fit: cover; }
+  .service-body { padding: 22px; }
+  .service-body h3 { margin-bottom: 8px; font-size: 1.15rem; }
+  .service-body p { color: var(--text-muted); font-size: 0.92rem; }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .gallery-grid figure {
+    border-radius: 10px; overflow: hidden; position: relative; aspect-ratio: 1/1;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .gallery-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; cursor: pointer; }
+  .gallery-grid figure:hover img { transform: scale(1.08); }
+  .gallery-grid a { display: block; width: 100%; height: 100%; }
+
+  /* Why us */
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .why-card { text-align: center; padding: 10px; }
+  .why-icon {
+    width: 56px; height: 56px; border-radius: 50%; background: rgba(242,183,5,0.12);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+    font-size: 1.6rem;
+  }
+  .why-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .why-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+  /* Reviews */
+  .review-wrap { background: var(--navy-light); border-radius: 16px; padding: 46px; text-align: center; }
+  .stars { color: var(--accent); font-size: 1.6rem; letter-spacing: 4px; margin-bottom: 10px; }
+  .review-score { font-size: 2.2rem; font-weight: 700; }
+  .review-wrap p.sub { color: var(--text-muted); margin-bottom: 30px; }
+  .quote {
+    max-width: 700px; margin: 0 auto; font-size: 1.15rem; font-style: italic; color: var(--text-light);
+  }
+  .quote span { display: block; margin-top: 14px; color: var(--accent); font-style: normal; font-weight: 600; font-size: 0.95rem; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .contact-card {
+    background: var(--card-bg); border-radius: 12px; padding: 30px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .contact-row { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
+  .contact-row .icon { color: var(--accent); font-size: 1.3rem; width: 26px; }
+  .contact-row h4 { font-size: 0.95rem; margin-bottom: 3px; }
+  .contact-row p, .contact-row a { color: var(--text-muted); font-size: 0.93rem; }
+  .contact-row a:hover { color: var(--accent); }
+  .hours-list { list-style: none; color: var(--text-muted); font-size: 0.93rem; }
+  .hours-list li { display: flex; justify-content: space-between; padding: 4px 0; }
+  .cta-panel {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    border-radius: 12px; padding: 34px; color: var(--navy); display: flex; flex-direction: column; justify-content: center;
+  }
+  .cta-panel h3 { font-size: 1.5rem; margin-bottom: 10px; }
+  .cta-panel p { margin-bottom: 22px; color: rgba(10,24,54,0.8); }
+  .cta-panel .btn { background: var(--navy); color: var(--text-light); align-self: flex-start; }
+
+  /* Contact form */
+  .form-card h3 { font-size: 1.2rem; margin-bottom: 18px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 11px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);
+    background: var(--navy); color: var(--text-light); font-family: inherit; font-size: 0.95rem;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-row { display: flex; gap: 14px; }
+  .form-row .form-group { flex: 1; }
+  .form-submit {
+    width: 100%; background: var(--accent); color: var(--navy); border: none;
+    padding: 13px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(242,183,5,0.3); }
+  .form-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 12px; text-align: center; }
+  .form-success {
+    display: none; background: rgba(46,204,113,0.12); border: 1px solid rgba(46,204,113,0.4);
+    color: #6be39a; padding: 12px 14px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 16px;
+  }
+
+  footer {
+    background: #060f24; padding: 34px 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  footer .logo { justify-content: center; margin-bottom: 10px; color: var(--text-light); }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 2rem; }
+  }
+  @media (max-width: 480px) {
+    .services-grid, .gallery-grid, .why-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">GREG LIFE STYLZ TECHNOLOGY LTD<span class="dot">.</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Our Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="tel:+18764694989">Call Now</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Electrician &amp; Technology Services · Kingston, Jamaica</span>
+    <h1>Powering Homes &amp; Businesses <span class="accent">The Right Way</span></h1>
+    <p>Greg Life Stylz Technology Ltd delivers professional electrical installation, CCTV camera systems, network cabling, and solar backup solutions — done right, the first time.</p>
+    <div class="badge-row">
+      <span>⭐ <strong>4.8</strong> / 5 rating</span>
+      <span>💬 <strong>28</strong> Google reviews</span>
+      <span>🕐 Open <strong>24 hours</strong></span>
+    </div>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="tel:+18764694989">📞 (876) 469-4989</a>
+      <a class="btn btn-outline" href="#gallery">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-img">
+      <img src="images/Image1.png" alt="Greg Life Stylz camera and network installation">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Who We Are</span>
+      <h2 style="margin-bottom:16px;">Profession at what we do.</h2>
+      <p>"We provide services for electrical service, camera installation and network. We are profession at what we do." That's our own promise, and our customers agree — with a 4.8-star rating across 28 Google reviews.</p>
+      <p>Based at 64 Duhaney Dr, Kingston, our team handles everything from panel upgrades and rewiring to full CCTV systems, structured network cabling, and solar/battery backup installs for homes, offices, and computer labs across Jamaica.</p>
+      <div class="stat-row">
+        <div><strong>4.8★</strong><span>Google Rating</span></div>
+        <div><strong>28+</strong><span>Happy Clients</span></div>
+        <div><strong>24/7</strong><span>Availability</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--navy-light);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Our Services</h2>
+      <p>From residential wiring to full commercial network builds, we cover the electrical and technology work that keeps your property running safely.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/Image3.png" alt="Electrical panel wiring">
+        <div class="service-body">
+          <h3>⚡ Electrical Installation &amp; Repair</h3>
+          <p>Panel upgrades, breaker boxes, rewiring, outlets, and switches — installed and repaired to code.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="images/Image1.png" alt="CCTV camera installation">
+        <div class="service-body">
+          <h3>📷 CCTV &amp; Camera Installation</h3>
+          <p>Security camera systems for homes and businesses, set up for reliable round-the-clock monitoring.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="images/Image9.png" alt="Network cabling rack">
+        <div class="service-body">
+          <h3>🌐 Network &amp; Structured Cabling</h3>
+          <p>Full network rack builds, patch panels, and structured cabling for offices and computer labs.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="images/Image6.png" alt="Solar battery backup installation">
+        <div class="service-body">
+          <h3>🔋 Solar &amp; Battery Backup</h3>
+          <p>Inverter and battery backup systems installed to keep your power on when the grid goes down.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="images/Image14.png" alt="Office computer setup">
+        <div class="service-body">
+          <h3>🖥️ Office &amp; Computer Lab Setup</h3>
+          <p>End-to-end setup of workstations, cabling, and network drops for offices and training labs.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="images/Image13.png" alt="Meter and panel repair">
+        <div class="service-body">
+          <h3>🔧 Meter &amp; Service Panel Work</h3>
+          <p>Meter base repairs, service upgrades, and panel replacements handled safely and professionally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Recent Projects</span>
+      <h2>Our Work</h2>
+      <p>A look at real jobs completed by our team — electrical panels, cabling, cameras, and more.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure><a href="images/Image1.png" target="_blank" rel="noopener"><img src="images/Image1.png" alt="Camera and network install"></a></figure>
+      <figure><a href="images/Image2.png" target="_blank" rel="noopener"><img src="images/Image2.png" alt="Electrical panel wiring"></a></figure>
+      <figure><a href="images/Image4.png" target="_blank" rel="noopener"><img src="images/Image4.png" alt="Panel installation close-up"></a></figure>
+      <figure><a href="images/Image5.png" target="_blank" rel="noopener"><img src="images/Image5.png" alt="Roof conduit rough-in"></a></figure>
+      <figure><a href="images/Image6.png" target="_blank" rel="noopener"><img src="images/Image6.png" alt="Solar battery backup"></a></figure>
+      <figure><a href="images/Image8.png" target="_blank" rel="noopener"><img src="images/Image8.png" alt="Socket and switch wiring"></a></figure>
+      <figure><a href="images/Image9.png" target="_blank" rel="noopener"><img src="images/Image9.png" alt="Network patch panel rack"></a></figure>
+      <figure><a href="images/Image11.png" target="_blank" rel="noopener"><img src="images/Image11.png" alt="Breaker installation"></a></figure>
+      <figure><a href="images/Image12.png" target="_blank" rel="noopener"><img src="images/Image12.png" alt="Conduit rough-in on roof slab"></a></figure>
+      <figure><a href="images/Image13.png" target="_blank" rel="noopener"><img src="images/Image13.png" alt="Meter base repair"></a></figure>
+      <figure><a href="images/Image16.png" target="_blank" rel="noopener"><img src="images/Image16.png" alt="Outdoor panel installation"></a></figure>
+      <figure><a href="images/Image17.png" target="_blank" rel="noopener"><img src="images/Image17.png" alt="Utility pole line work"></a></figure>
+    </div>
+  </div>
+</section>
+
+<section id="why" style="background:var(--navy-light);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Built on Trust &amp; Craftsmanship</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>Safe &amp; Code-Compliant</h3>
+        <p>Every job is done to proper electrical safety standards.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🕐</div>
+        <h3>Available 24 Hours</h3>
+        <p>We're on call whenever you need us, day or night.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏅</div>
+        <h3>Highly Rated</h3>
+        <p>4.8 stars from 28 verified Google reviews.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧰</div>
+        <h3>Full-Service Team</h3>
+        <p>Electrical, network, camera, and solar work — one crew, one call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="review-wrap">
+      <div class="stars">★★★★★</div>
+      <div class="review-score">4.8 out of 5</div>
+      <p class="sub">Based on 28 Google reviews</p>
+      <p class="quote">"We provide services for electrical service, camera installation and network. We are profession at what we do."
+        <span>— Greg Life Stylz Technology Ltd</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--navy-light);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <p>Ready to start your project? Reach out today for a consultation.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="icon">📍</div>
+          <div><h4>Address</h4><p>64 Duhaney Dr, Kingston, Jamaica</p></div>
+        </div>
+        <div class="contact-row">
+          <div class="icon">📞</div>
+          <div><h4>Phone</h4><a href="tel:+18764694989">(876) 469-4989</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="icon">✉️</div>
+          <div><h4>Email</h4><a href="mailto:greglifestylz@gmail.com">greglifestylz@gmail.com</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="icon">🕐</div>
+          <div>
+            <h4>Hours</h4>
+            <ul class="hours-list">
+              <li><span>Every day</span><span style="color:var(--accent);">Open 24 hours</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card form-card">
+        <h3>Send Us a Message</h3>
+        <div class="form-success" id="formSuccess">✅ Thanks! Your email app should now be open with your message ready to send.</div>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option>Electrical Installation &amp; Repair</option>
+              <option>CCTV &amp; Camera Installation</option>
+              <option>Network &amp; Structured Cabling</option>
+              <option>Solar &amp; Battery Backup</option>
+              <option>Office / Computer Lab Setup</option>
+              <option>Meter &amp; Panel Work</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+          <p class="form-note">We'll get back to you as soon as possible, or call us directly at (876) 469-4989.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value.trim();
+
+    const subject = encodeURIComponent(`Website Inquiry: ${service}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:greglifestylz@gmail.com?subject=${subject}&body=${body}`;
+
+    document.getElementById('formSuccess').style.display = 'block';
+    e.target.reset();
+  });
+</script>
+
+<footer>
+  <div class="container">
+    <div class="logo">GREG LIFE STYLZ TECHNOLOGY LTD<span class="dot">.</span></div>
+    <p>Electrician &amp; Technology Services · Kingston, Jamaica</p>
+    <p style="margin-top:10px;">&copy; 2026 Greg Life Stylz Technology Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
