@@ -1,0 +1,15 @@
+{
+  "name": "greg-life-stylz-website",
+  "version": "1.0.0",
+  "description": "Greg Life Stylz Technology Ltd business website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "dotenv": "^16.4.5"
+  }
+}
